@@ -1130,7 +1130,6 @@ const InfinititechWebsite = () => {
           transform: translate(-50%, -50%);
           transition: width 0.3s, height 0.3s, border-color 0.3s, opacity 0.3s;
           z-index: 10000;
-          mix-blend-mode: difference;
         }
         
         .custom-cursor.hidden { opacity: 0; }
@@ -1362,12 +1361,13 @@ const InfinititechWebsite = () => {
           transform: translateY(100%) rotateX(-90deg);
           transform-origin: bottom center;
           transition: none;
+          color: inherit;
         }
-        
+
         .split-char.animate {
           animation: char-reveal 0.8s var(--ease-out-expo) forwards;
         }
-        
+
         @keyframes char-reveal {
           to {
             opacity: 1;
@@ -1526,11 +1526,38 @@ const InfinititechWebsite = () => {
           letter-spacing: -0.02em;
         }
         
+        .split-text.accent {
+          background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          color: transparent;
+          display: inline-block;
+        }
+
+        .split-text.accent .split-char {
+          background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          color: transparent;
+        }
+
         .section-title .accent {
           background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
+          color: transparent;
+          display: inline-block;
+        }
+
+        .section-title .accent .split-char {
+          background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          color: transparent;
         }
         
         /* ========================================
@@ -1598,6 +1625,16 @@ const InfinititechWebsite = () => {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
+          color: transparent;
+          display: block;
+        }
+
+        .hero-line.accent .split-char {
+          background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          color: transparent;
         }
         
         .hero-subtitle {
@@ -2319,14 +2356,23 @@ const InfinititechWebsite = () => {
         
         .footer {
           padding: 80px 0 40px;
-          background: var(--color-bg-elevated);
-          border-top: 1px solid var(--color-border);
+          background: var(--color-bg-elevated) !important;
+          border-top: 3px solid var(--color-primary) !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+          display: block !important;
+          position: relative !important;
+          z-index: 50 !important;
+          margin-top: 0 !important;
+          pointer-events: auto !important;
+          min-height: 200px !important;
         }
         
         .footer-container {
           max-width: 1400px;
           margin: 0 auto;
           padding: 0 40px;
+          opacity: 1 !important;
         }
         
         .footer-main {
@@ -2334,12 +2380,14 @@ const InfinititechWebsite = () => {
           justify-content: space-between;
           gap: 60px;
           margin-bottom: 60px;
+          opacity: 1 !important;
         }
-        
+
         .footer-brand {
           max-width: 400px;
+          opacity: 1 !important;
         }
-        
+
         .footer-logo {
           display: flex;
           align-items: center;
@@ -2348,35 +2396,44 @@ const InfinititechWebsite = () => {
           font-weight: 600;
           font-size: 1.3rem;
           margin-bottom: 20px;
+          color: var(--color-text) !important;
+          opacity: 1 !important;
         }
-        
+
         .footer-tagline {
-          color: var(--color-text-muted);
+          color: var(--color-text-muted) !important;
           line-height: 1.7;
+          opacity: 1 !important;
         }
-        
+
         .footer-links {
           display: flex;
           gap: 80px;
+          opacity: 1 !important;
         }
         
         .footer-col h4 {
           font-family: var(--font-display);
           font-weight: 600;
           margin-bottom: 20px;
+          color: var(--color-text) !important;
+          opacity: 1 !important;
         }
-        
+
         .footer-col ul {
           list-style: none;
+          opacity: 1 !important;
         }
-        
+
         .footer-col li {
           margin-bottom: 12px;
+          opacity: 1 !important;
         }
-        
+
         .footer-col a {
-          color: var(--color-text-muted);
+          color: var(--color-text-muted) !important;
           transition: color 0.3s;
+          opacity: 1 !important;
         }
         
         .footer-col a:hover {
@@ -2391,13 +2448,20 @@ const InfinititechWebsite = () => {
           border-top: 1px solid var(--color-border);
           color: var(--color-text-muted);
           font-size: 0.9rem;
+          opacity: 1 !important;
         }
-        
+
         .footer-legal {
           display: flex;
           gap: 30px;
+          opacity: 1 !important;
         }
-        
+
+        .footer-legal a {
+          color: var(--color-text-muted) !important;
+          opacity: 1 !important;
+        }
+
         .footer-legal a:hover {
           color: var(--color-primary);
         }
