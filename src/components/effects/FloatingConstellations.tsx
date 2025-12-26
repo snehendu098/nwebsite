@@ -13,6 +13,10 @@ export const FloatingConstellation = ({
   opacity = 0.5,
 }: FloatingConstellationProps) => {
   const [progress, setProgress] = useState(0);
+  const [rotationConfig] = useState(() => ({
+    multiplier: 1 + Math.random() * 2, // 1-3 full rotations
+    direction: Math.random() > 0.5 ? 1 : -1, // clockwise or counter-clockwise
+  }));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +39,7 @@ export const FloatingConstellation = ({
   // End: bottom-right with 0px gap
   const xPos = `calc(80px + (100vw - ${size}px - 80px) * ${progress})`;
   const yPos = `calc(160px + (100vh - ${size}px - 160px) * ${progress})`;
+  const rotation = progress * 360 * rotationConfig.multiplier * rotationConfig.direction;
 
   return (
     <div className="floating-constellations">
@@ -44,6 +49,7 @@ export const FloatingConstellation = ({
           left: xPos,
           top: yPos,
           opacity,
+          transform: `rotate(${rotation}deg)`,
         }}
       >
         <Constellation
