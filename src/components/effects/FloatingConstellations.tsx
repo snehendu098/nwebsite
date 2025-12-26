@@ -12,10 +12,15 @@ export const FloatingConstellation = ({
   name,
   opacity = 0.5,
 }: FloatingConstellationProps) => {
-  const [scrollY, setScrollY] = useState(0);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
+    const handleScroll = () => {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollProgress = scrollHeight > 0 ? window.scrollY / scrollHeight : 0;
+      setProgress(Math.min(1, Math.max(0, scrollProgress)));
+    };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
@@ -24,26 +29,28 @@ export const FloatingConstellation = ({
   const constellation = CONSTELLATIONS[name];
   if (!constellation) return null;
 
-  const translateY = scrollY * 0.05;
-  const translateX = scrollY * 0.02;
-  const rotation = scrollY * 0.01;
+  const size = 250;
+
+  // Start: top-left (160px from top, 80px from left)
+  // End: bottom-right with 0px gap
+  const xPos = `calc(80px + (100vw - ${size}px - 80px) * ${progress})`;
+  const yPos = `calc(160px + (100vh - ${size}px - 160px) * ${progress})`;
 
   return (
     <div className="floating-constellations">
       <div
         className="floating-constellation"
         style={{
-          left: "50%",
-          top: "30%",
+          left: xPos,
+          top: yPos,
           opacity,
-          transform: `translate(-50%, -50%) translate(${translateX}px, ${translateY}px) rotate(${rotation}deg)`,
         }}
       >
         <Constellation
           stars={constellation.stars}
           connections={constellation.connections}
-          width={250}
-          height={250}
+          width={size}
+          height={size}
           animated
         />
       </div>
