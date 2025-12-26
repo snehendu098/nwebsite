@@ -2314,7 +2314,7 @@ a {
 
 .floating-constellation {
   position: absolute;
-  will-change: left, top;
+  will-change: transform;
 }
 
 .floating-constellation .constellation {
