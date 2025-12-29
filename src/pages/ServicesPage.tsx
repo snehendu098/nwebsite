@@ -9,9 +9,9 @@ export const ServicesPage = () => {
       <FloatingConstellation name="bigDipper" />
       <PageLayout
         tag="Our Services"
-        title="Comprehensive"
+        title="Engineering-Grade"
         titleAccent="Technology Solutions"
-        description="End-to-end technology services designed to accelerate your digital transformation journey."
+        description="Built for scale, security, and real-world performance. Our capabilities cover modern data center design, cloud engineering, enterprise automation, cybersecurity, advanced networking, smart city deployments, AI/ML systems, blockchain development, and full-stack digital product engineering."
       >
         <div className="section-container">
           <div className="page-section">

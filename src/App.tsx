@@ -6,6 +6,7 @@ import {
   AboutPage,
   ServicesPage,
   ProductsPage,
+  ProductDetailPage,
   PortfolioPage,
   ProcessPage,
   TeamPage,
@@ -27,6 +28,7 @@ const App = () => {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/products" element={<ProductsPage />} />
+            <Route path="/products/:slug" element={<ProductDetailPage />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="/process" element={<ProcessPage />} />
             <Route path="/team" element={<TeamPage />} />

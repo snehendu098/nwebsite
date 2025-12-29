@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { ParallaxLayer, SplitText } from "@/components/ui";
+import { SplitText } from "@/components/ui";
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -21,17 +21,15 @@ export const PageLayout = ({
       <section className="page-hero">
         <div className="page-hero-bg" />
         <div className="section-container">
-          <ParallaxLayer speed={-0.2}>
-            <div className="page-header">
-              <span className="section-tag">{tag}</span>
-              <h1 className="page-title">
-                <SplitText text={title} />
-                <br />
-                <SplitText text={titleAccent} className="accent" delay={0.3} />
-              </h1>
-              {description && <p className="page-description">{description}</p>}
-            </div>
-          </ParallaxLayer>
+          <div className="page-header">
+            <span className="section-tag">{tag}</span>
+            <h1 className="page-title">
+              <SplitText text={title} />
+              <br />
+              <SplitText text={titleAccent} className="accent" />
+            </h1>
+            {description && <p className="page-description">{description}</p>}
+          </div>
         </div>
       </section>
 
