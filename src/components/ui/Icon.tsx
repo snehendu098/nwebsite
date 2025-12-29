@@ -1,0 +1,79 @@
+import {
+  Rocket,
+  Shield,
+  Lightbulb,
+  Handshake,
+  Zap,
+  Telescope,
+  Gem,
+  Server,
+  Wrench,
+  Building2,
+  Briefcase,
+  Smartphone,
+  TrendingUp,
+  Mail,
+  MapPin,
+  Clock,
+  CheckCircle,
+  Award,
+  GitBranch,
+  Lock,
+  Network,
+  Brain,
+  Blocks,
+  Globe,
+  Users,
+  Store,
+  Calculator,
+  GraduationCap,
+  Truck,
+  UtensilsCrossed,
+  Car,
+  type LucideProps,
+} from "lucide-react";
+
+const iconMap = {
+  rocket: Rocket,
+  shield: Shield,
+  lightbulb: Lightbulb,
+  handshake: Handshake,
+  zap: Zap,
+  telescope: Telescope,
+  gem: Gem,
+  server: Server,
+  wrench: Wrench,
+  "building-2": Building2,
+  briefcase: Briefcase,
+  smartphone: Smartphone,
+  "trending-up": TrendingUp,
+  mail: Mail,
+  "map-pin": MapPin,
+  clock: Clock,
+  check: CheckCircle,
+  award: Award,
+  "git-branch": GitBranch,
+  lock: Lock,
+  network: Network,
+  brain: Brain,
+  blocks: Blocks,
+  globe: Globe,
+  users: Users,
+  store: Store,
+  calculator: Calculator,
+  "graduation-cap": GraduationCap,
+  truck: Truck,
+  "utensils-crossed": UtensilsCrossed,
+  car: Car,
+} as const;
+
+export type IconName = keyof typeof iconMap;
+
+interface IconProps extends LucideProps {
+  name: IconName;
+}
+
+export const Icon = ({ name, ...props }: IconProps) => {
+  const IconComponent = iconMap[name];
+  return <IconComponent {...props} />;
+};

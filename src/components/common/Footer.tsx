@@ -1,0 +1,54 @@
+import { Link } from "react-router-dom";
+import { footerLinks } from "@/data/data";
+
+export const Footer = () => {
+  return (
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-main">
+          <div className="footer-brand">
+            <Link to="/" className="footer-logo">
+              <span className="logo-symbol">∞</span>
+              <span className="logo-text">Infinititech Partners</span>
+            </Link>
+            <p className="footer-tagline">
+              Transform your digital vision into reality with cutting-edge
+              technology solutions.
+            </p>
+          </div>
+
+          <div className="footer-links">
+            <div className="footer-col">
+              <h4>Quick Links</h4>
+              <ul>
+                {footerLinks.main.map((link, i) => (
+                  <li key={i}>
+                    <Link to={link.href}>{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="footer-col">
+              <h4>More</h4>
+              <ul>
+                {footerLinks.secondary.map((link, i) => (
+                  <li key={i}>
+                    <Link to={link.href}>{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <p>&copy; 2025 Infinititech Partners. All rights reserved.</p>
+          <div className="footer-legal">
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/terms">Terms of Service</Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
