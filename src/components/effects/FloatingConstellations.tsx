@@ -20,6 +20,10 @@ export const FloatingConstellation = ({
     bounceAmplitude: 0.15 + Math.random() * 0.25, // 15-40% of width
     phase: Math.random() * Math.PI * 2, // random starting phase
     startX: 0.1 + Math.random() * 0.3, // start 10-40% from left
+    // Vertical randomness config
+    verticalBounceFrequency: 1.5 + Math.random() * 2.5, // 1.5-4 vertical waves
+    verticalBounceAmplitude: 0.08 + Math.random() * 0.15, // 8-23% vertical deviation
+    verticalPhase: Math.random() * Math.PI * 2, // random vertical starting phase
   }));
 
   useEffect(() => {
@@ -39,8 +43,10 @@ export const FloatingConstellation = ({
 
   const size = 250;
 
-  // Y moves from top to bottom linearly
-  const yPos = `calc(160px + (100vh - ${size}px - 160px) * ${progress})`;
+  // Y moves from top to bottom with vertical bouncing
+  // Vertical bounce dampens towards end to ensure it finishes at bottom
+  const verticalBounce = Math.sin(progress * Math.PI * bounceConfig.verticalBounceFrequency + bounceConfig.verticalPhase) * bounceConfig.verticalBounceAmplitude * (1 - progress * 0.3);
+  const yPos = `calc(160px + (100vh - ${size}px - 160px) * ${progress + verticalBounce})`;
 
   // X bounces horizontally using sine wave with random config
   const bounceOffset = Math.sin(progress * Math.PI * bounceConfig.bounceFrequency + bounceConfig.phase) * bounceConfig.bounceAmplitude;
