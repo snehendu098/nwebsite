@@ -16,10 +16,10 @@ export const PortfolioPage = () => {
       >
         <div className="section-container">
           <div className="page-section">
-            <div className="portfolio-grid-full">
+            <div className="flex flex-wrap gap-6 justify-center">
               {projects.map((project, i) => (
-                <ParallaxLayer key={i} speed={0.1 + i * 0.03}>
-                  <TiltCard className="portfolio-card-full">
+                <TiltCard key={i} className="portfolio-card-full w-[32%]">
+                  <Link to={`/portfolio/${project.slug}`}>
                     <div
                       className="portfolio-image-full"
                       style={{ background: project.gradient }}
@@ -40,20 +40,9 @@ export const PortfolioPage = () => {
                           </span>
                         ))}
                       </div>
-                      <Link to={`/portfolio/${project.slug}`} className="portfolio-view-btn">
-                        View Case Study
-                        <svg viewBox="0 0 24 24" className="btn-arrow">
-                          <path
-                            d="M5 12h14M12 5l7 7-7 7"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            fill="none"
-                          />
-                        </svg>
-                      </Link>
                     </div>
-                  </TiltCard>
-                </ParallaxLayer>
+                  </Link>
+                </TiltCard>
               ))}
             </div>
           </div>

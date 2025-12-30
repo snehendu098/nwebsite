@@ -63,8 +63,8 @@ export const PortfolioSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="bg-transparent" />
+          <CarouselNext className="bg-transparent" />
         </Carousel>
 
         <div className="portfolio-cta mt-20">

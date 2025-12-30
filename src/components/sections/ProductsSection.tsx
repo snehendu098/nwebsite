@@ -76,8 +76,8 @@ export const ProductsSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="bg-transparent" />
+          <CarouselNext className="bg-transparent" />
         </Carousel>
       </div>
     </section>

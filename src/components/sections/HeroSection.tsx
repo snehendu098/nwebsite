@@ -1,5 +1,10 @@
 import { AuroraBackground } from "@/components/effects";
-import { ParallaxLayer, SplitText, BlurText, MagneticButton } from "@/components/ui";
+import {
+  ParallaxLayer,
+  SplitText,
+  BlurText,
+  MagneticButton,
+} from "@/components/ui";
 
 export const HeroSection = () => (
   <section id="home" className="hero">
@@ -14,8 +19,8 @@ export const HeroSection = () => (
 
         <h1 className="hero-title">
           <SplitText text="Transform" className="hero-line" />
-          <SplitText text="Innovate &" className="hero-line accent" delay={0.3} />
-          <SplitText text="Scale" className="hero-line" delay={0.6} />
+          <SplitText text="Innovate &" className="hero-line accent" />
+          <SplitText text="Scale" className="hero-line" />
         </h1>
 
         <p className="hero-subtitle">
@@ -40,13 +45,6 @@ export const HeroSection = () => (
           <MagneticButton href="#services" className="btn-secondary">
             Explore Services
           </MagneticButton>
-        </div>
-
-        <div className="hero-scroll">
-          <div className="scroll-indicator">
-            <div className="scroll-dot" />
-          </div>
-          <span>Scroll to explore</span>
         </div>
       </div>
     </ParallaxLayer>
