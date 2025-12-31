@@ -1182,6 +1182,26 @@ export const products: Product[] = [
       "ANPR with <100ms latency, hardware control, predictive analytics, multi-tenant",
     demoUrl: "https://smart-parking-xi-pearl.vercel.app",
   },
+  {
+    slug: "hospital-erp",
+    name: "Hospital ERP",
+    tagline: "Complete Hospital Management System",
+    category: "Healthcare / ERP / Medical",
+    icon: "hospital",
+    desc: "Enterprise-grade HMS with EMR/EHR, patient management, diagnostics, pharmacy, billing, and multi-branch support—designed for NABH/JCI compliance.",
+    gradient: "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)",
+    features: ["EMR/EHR", "OPD/IPD", "Diagnostics", "Pharmacy"],
+    technologies: [
+      "React 18",
+      "Express.js",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "Ant Design",
+    ],
+    highlights: "NABH/JCI compliance, multi-branch, complete EMR, 15+ modules",
+    demoUrl: "https://hospital-vnyb.vercel.app/",
+  },
 ];
 
 // Product Details
@@ -2276,6 +2296,115 @@ export const productDetails: ProductDetail[] = [
       { label: "User Portals", value: "3" },
       { label: "Hardware Protocols", value: "3" },
       { label: "AI Models", value: "2" },
+    ],
+  },
+  {
+    slug: "hospital-erp",
+    heroTitle: "Hospital ERP",
+    heroSubtitle: "Complete Hospital Management System",
+    heroDescription:
+      "Enterprise-grade HMS with EMR/EHR, patient management, diagnostics, pharmacy, billing, and multi-branch support—designed for NABH/JCI compliance",
+    modules: [
+      {
+        icon: "users",
+        title: "Patient Registration",
+        description:
+          "Unique MRN generation, multi-ID support (govt ID, insurance, corporate), biometric identification, family linking, and document management.",
+      },
+      {
+        icon: "calendar",
+        title: "Appointment & Scheduling",
+        description:
+          "Doctor and department-wise slots, teleconsultation support, online booking ready, no-show tracking, and automated SMS/WhatsApp reminders.",
+      },
+      {
+        icon: "clipboard-list",
+        title: "Queue Management",
+        description:
+          "Token generation, real-time display boards, priority tagging for emergency/VIP patients, and department-wise queue tracking.",
+      },
+      {
+        icon: "stethoscope",
+        title: "OPD/IPD Management",
+        description:
+          "Complete outpatient and inpatient workflows with admission, transfer, discharge, bed management, and ward-based tariffs.",
+      },
+      {
+        icon: "file-text",
+        title: "EMR/EHR",
+        description:
+          "SOAP notes, clinical templates by specialty, e-prescriptions, vitals charting, allergies, and complete medical history.",
+      },
+      {
+        icon: "building-2",
+        title: "Multi-Branch Support",
+        description:
+          "Manage multiple hospitals, clinics, and diagnostic centers with centralized or branch-specific configurations.",
+      },
+    ],
+    portals: [
+      {
+        title: "Clinical Modules",
+        description: "OPD EMR, IPD, OT, ICU, Emergency, Nursing",
+        features: [
+          "OPD EMR with SOAP notes",
+          "IPD admission/transfer/discharge",
+          "OT scheduling & management",
+          "ICU specialized workflows",
+          "Emergency/casualty triage",
+          "Nursing station care plans",
+        ],
+      },
+      {
+        title: "Diagnostics & Support",
+        description: "Lab, Radiology, Pharmacy, Blood Bank",
+        features: [
+          "Laboratory (LIS) with machine integration",
+          "Radiology (RIS/PACS) integration",
+          "Pharmacy with stock management",
+          "Blood bank donor management",
+          "Inventory & asset management",
+          "Transport & ambulance booking",
+        ],
+      },
+      {
+        title: "Finance & Operations",
+        description: "Billing, Insurance, HR, Analytics",
+        features: [
+          "OP/IP billing with split payments",
+          "TPA & insurance claims",
+          "Multiple payment modes",
+          "HR & biometric attendance",
+          "Accounting interface (Tally/ERP)",
+          "Reports & analytics dashboards",
+        ],
+      },
+    ],
+    completeFeatures: [
+      "Patient Registration & MRN",
+      "Appointment Scheduling",
+      "Queue Management",
+      "OPD/IPD Management",
+      "EMR/EHR",
+      "OT Management",
+      "ICU Module",
+      "Emergency/Casualty",
+      "Laboratory (LIS)",
+      "Radiology (RIS/PACS)",
+      "Pharmacy Management",
+      "Blood Bank",
+      "Billing & Tariffs",
+      "TPA & Insurance",
+      "Multi-Branch Support",
+      "Biometric Integration",
+      "Analytics & Dashboards",
+      "NABH/JCI Compliance",
+    ],
+    stats: [
+      { label: "Clinical Modules", value: "6" },
+      { label: "Support Services", value: "8" },
+      { label: "User Roles", value: "15+" },
+      { label: "Standards", value: "HL7/FHIR/DICOM" },
     ],
   },
 ];

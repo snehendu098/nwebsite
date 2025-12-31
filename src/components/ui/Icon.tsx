@@ -38,6 +38,11 @@ import {
   Camera,
   Wallet,
   Send,
+  Hospital,
+  Stethoscope,
+  FileText,
+  Calendar,
+  ClipboardList,
   type LucideProps,
 } from "lucide-react";
 
@@ -81,6 +86,11 @@ const iconMap = {
   camera: Camera,
   wallet: Wallet,
   send: Send,
+  hospital: Hospital,
+  stethoscope: Stethoscope,
+  "file-text": FileText,
+  calendar: Calendar,
+  "clipboard-list": ClipboardList,
 } as const;
 
 export type IconName = keyof typeof iconMap;
